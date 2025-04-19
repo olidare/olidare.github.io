@@ -35,7 +35,7 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 stakeholders, significantly improving the efficiency of vaccine distribution.
 - Alerting Solution was presented at Splunk Conf22.
 
-**LLoyds Bank (Major UK Bank)**
+**Lloyds Bank (Major UK Bank)**
 
 - Designed and implemented ETL processes to map and standardise multiple data feeds.
 - Developed custom queries and reports to extract actionable insights from transaction data
