@@ -2,7 +2,7 @@
 
 ### Bio
 
-Technical Consultant with over 4 years of expertise in data analytics and intelligence, specializing in Splunk. Highly proficient with Splunk for Data Onboarding, ETL, Data Optimisation and translating large, complex datasets into compelling visualisations and presentations. 
+Technical Consultant with over 4 years of expertise in Big Data Analytics and Intelligence, through Splunk. Highly proficient with Splunk for Data Onboarding, ETL, Data Optimisation and translating large, complex datasets into compelling visualisations and presentations. 
 
 Currently pivoting toward a broader Data Analyst role by expanding proficiency in SQL, Python, and Tableau. Passionate about understanding data and helping organisations leverage their data for strategic value and transformation.
 
@@ -19,7 +19,7 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 ## Work Experience
 
 ### Online Study @ Coursera & Developing Personal Projects, Feb 2025 - Present
-- Courses: Advanced Google Data Analytics, Meta Data Analytics, Advanced Data Visualization with Tableau
+- Courses: [Advanced Google Data Analytics](https://www.coursera.org/professional-certificates/google-advanced-data-analytics), [Meta Data Analytics](https://www.coursera.org/professional-certificates/meta-data-analyst), [Advanced Data Visualization with Tableau](https://www.coursera.org/learn/advanced-data-visualization-with-tableau-public)
 - Areas of study include: Data Storytelling, SQL, Python, Tableau, Statistics and Machine Learning. 
 - Furthermore, building out a personal portfolio of Data Projects, linked below in 'Projects' Section.
 
