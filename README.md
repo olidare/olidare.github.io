@@ -18,14 +18,38 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 
 ## Work Experience
 
-### Online Study @ Coursera & Developing Personal Projects, Jan 2025 - Present
+### Online Study @ Coursera & Developing Personal Projects, Feb 2025 - Present
 - Courses: Advanced Google Data Analytics, Meta Data Analytics, Advanced Data Visualization with Tableau
 - Areas of study include: Data Storytelling, SQL, Python, Tableau, Statistics and Machine Learning. 
-- Furthermore, building out a personal portfolio of Data Projects.
+- Furthermore, building out a personal portfolio of Data Projects, linked below in 'Projects' Section.
 
 ### Splunk Consultant @ Apto Solutions, UK  Sept 2020 - Jan 2025
--  Test
-- 
+-  Technical Consultant with extensive experience delivering Splunk deployments across industries, leading cloud implementations, configuring data onboarding as well as helping clients to maximise the value of their data.
+
+**Selected Projects:**
+
+**NHS (UK National Health Service)**
+
+- Implemented a solution, monitoring the data behind the nationwide Covid test and vaccine distribution.
+- Built advanced SPL searches and developed custom visualizations and dashboards to present complex healthcare data metrics to
+stakeholders, significantly improving the efficiency of vaccine distribution.
+- Alerting Solution was presented at Splunk Conf22.
+
+**LLoyds Bank (Major UK Bank)**
+
+- Designed and implemented ETL processes to map and standardise multiple data feeds.
+- Developed custom queries and reports to extract actionable insights from transaction data
+
+**Fexco (Fintech Company)**
+
+- Led an engagement using Splunk ES, strategically guiding a large Fintech company to improve their Security Posture.
+- Tasks included a data audit, developing a Threat Model, creating Detective Use Cases, configuring critical assets and identities.
+- Regularly presented the data insights and recommendations to C -suite executives & the Technical Team.
+
+**CityFibre Ltd (British Network Provider)**
+
+- Migrating the existing knowledge objects including alerts, searches, dashboards into a new environment.
+- Developed an Ansible script to upgrade architecture via code.
 
 
 
