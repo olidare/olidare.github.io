@@ -31,7 +31,9 @@ transformation.
 
 ## Projects
 
-**Spotify Project**
+### Data-Driven Spotify Project
+[Code](https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth)
+
 - Working with a Colombian Artist to understand the data behind their streams and to identify areas of growth.
 
-**Google Certification - Analysing User Churn for Waze**
+### Google Certification - Analysing User Churn for Waze
