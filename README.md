@@ -33,6 +33,8 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 
 ### Data-Driven Spotify Project
 
+![Spotify Proj](/assets/spotify.jpg)
+
 - Working with a Colombian Artist to understand the data behind their streams and to identify areas of growth.
 
 [Git Code Repo](https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth)
