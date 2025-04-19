@@ -31,22 +31,33 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 
 ## Projects
 
-### Data-Driven Spotify Project
+### [Data-Driven Spotify Growth](https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth)
 
-![Spotify Proj](/Assets/spotify.png)
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <a href="https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth" target="_blank">
+    <img src="/Assets/spotify.png" width="300" height="300" style="object-fit: cover;" />  
+  </a>
+</div>
 
 - Working with a Colombian Artist to understand the data behind their streams and to identify areas of growth.
 
-[Git Code Repo](https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth)
 
-### Google Certification - Analysing User Churn for Waze
+### [Google Certification - Analysing User Churn for Waze](https://github.com/olidare/Data-Analytics---Waze)
 
-![Waze Proj](/Assets/waze.png)
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <a href="https://github.com/olidare/Data-Analytics---Waze" target="_blank">
+    <img src="/Assets/waze.png" width="450" height="280" style="object-fit: cover;" />
+  </a>
+</div>
 
 - As part of the Advanced Google Data Analytics, project looking into Real World data for the navigation App, Waze.
 -
 
-[Git Code Repo](https://github.com/olidare/Data-Analytics---Covid-Analysis)
 
+### [Covid 19](https://github.com/olidare/Data-Analytics---Covid-Analysis)
 
-![Covid Proj](/Assets/covid.png)
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <a href="https://github.com/olidare/Data-Analytics---Covid-Analysis" target="_blank">
+    <img src="/Assets/covid.png" width="720" height="280" style="object-fit: cover;" />  
+  </a>
+</div>
