@@ -33,7 +33,7 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 
 ### Data-Driven Spotify Project
 
-![Spotify Proj](/Assets/spotify.jpg)
+![Spotify Proj](/Assets/spotify.png)
 
 - Working with a Colombian Artist to understand the data behind their streams and to identify areas of growth.
 
@@ -41,7 +41,12 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 
 ### Google Certification - Analysing User Churn for Waze
 
+![Waze Proj](/Assets/waze.png)
+
 - As part of the Advanced Google Data Analytics, project looking into Real World data for the navigation App, Waze.
 -
 
 [Git Code Repo](https://github.com/olidare/Data-Analytics---Covid-Analysis)
+
+
+![Covid Proj](/Assets/covid.png)
