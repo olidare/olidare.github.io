@@ -19,7 +19,7 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 ## Work Experience
 
 ### Online Study @ Coursera & Developing Personal Projects, Feb 2025 - Present
-- Courses: [Advanced Google Data Analytics](https://www.coursera.org/professional-certificates/google-advanced-data-analytics), [Meta Data Analytics](https://www.coursera.org/professional-certificates/meta-data-analyst), [Advanced Data Visualization with Tableau](https://www.coursera.org/learn/advanced-data-visualization-with-tableau-public)
+- Courses: [Advanced Google Data Analytics](https://www.coursera.org/professional-certificates/google-advanced-data-analytics), [Meta Data Analytics](https://www.coursera.org/professional-certificates/meta-data-analyst), [Tableau Business Intelligence Analyst Professional Certificate](https://www.coursera.org/professional-certificates/tableau-business-intelligence-analyst)
 - Areas of study include: Data Storytelling, SQL, Python, Tableau, Statistics and Machine Learning. 
 - Furthermore, building out a personal portfolio of Data Projects, linked below in 'Projects' Section.
 
