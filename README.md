@@ -55,6 +55,18 @@ stakeholders, significantly improving the efficiency of vaccine distribution.
 
 ## Projects
 
+### [Google Certification - Analysing User Churn for Waze](https://github.com/olidare/Data-Analytics---Waze)
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <a href="https://github.com/olidare/Data-Analytics---Waze" target="_blank">
+    <img src="/Assets/waze.png" width="450" height="280" style="object-fit: cover;" />
+  </a>
+</div>
+
+- As part of the Advanced Google Data Analytics, project looking into Real World data for the navigation App, Waze.
+
+
+
 ### [Data-Driven Spotify Growth](https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth)
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -65,17 +77,6 @@ stakeholders, significantly improving the efficiency of vaccine distribution.
 
 - Working with a Colombian Artist to understand the data behind their streams and to identify areas of growth.
 
-
-### [Google Certification - Analysing User Churn for Waze](https://github.com/olidare/Data-Analytics---Waze)
-
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <a href="https://github.com/olidare/Data-Analytics---Waze" target="_blank">
-    <img src="/Assets/waze.png" width="450" height="280" style="object-fit: cover;" />
-  </a>
-</div>
-
-- As part of the Advanced Google Data Analytics, project looking into Real World data for the navigation App, Waze.
--
 
 
 ### [Covid 19](https://github.com/olidare/Data-Analytics---Covid-Analysis)
