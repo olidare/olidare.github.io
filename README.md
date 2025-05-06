@@ -6,7 +6,7 @@ Technical Consultant with over 4 years of expertise in Big Data Analytics and In
 
 Currently pivoting toward a broader Data Analyst role by expanding proficiency in SQL, Python, and Tableau. Passionate about understanding data and helping organisations leverage their data for strategic value and transformation.
 
-## 💻 Tech Stack:
+## Tech Stack:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)   ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white) ![Splunk](https://img.shields.io/badge/splunk-%23000000.svg?style=for-the-badge&logo=splunk&logoColor=white) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logoColor=white)
  ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white) ![Ansible](https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 
@@ -20,7 +20,7 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 - M.S., Computer Science Conversion Course	| University of Bristol (2016 - 2018)	 			        		
 - B.S., Accounting and Finance |  University of Sheffield (2011 - 2014)
 
-## 🌐 Socials:
+## Social Media:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/oli-dare-7741361b9) [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?logo=TikTok&logoColor=white)](https://tiktok.com/@oliddata) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:odare3@gmail.com) 
 
 
