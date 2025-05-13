@@ -4,11 +4,11 @@
 
 Technical Consultant with over 4 years of expertise in Big Data Analytics and Intelligence, through Splunk. Highly proficient with Splunk for Data Onboarding, ETL, Data Optimisation and translating large, complex datasets into compelling visualisations and presentations. 
 
-Currently pivoting toward a broader Data Analyst role by expanding proficiency in SQL, Python, and Tableau. Passionate about understanding data and helping organisations leverage their data for strategic value and transformation.
+Currently pivoting toward a broader Data Analyst role by expanding proficiency in SQL, Python, Statistics, Power BI and Tableau. Passionate about understanding data and helping organisations leverage their data for strategic value and transformation.
 
 ## Tech Stack:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)   ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white) ![Splunk](https://img.shields.io/badge/splunk-%23000000.svg?style=for-the-badge&logo=splunk&logoColor=white) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logoColor=white)
- ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white) ![Ansible](https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+[![Power BI](https://custom-icon-badges.demolab.com/badge/Power%20BI-F1C912?logo=power-bi&logoColor=fff)](#) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white) ![Ansible](https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) 
 
 ### Libraries
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Scipy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white) 
@@ -28,7 +28,7 @@ Currently pivoting toward a broader Data Analyst role by expanding proficiency i
 
 ### Online Study @ Coursera & Developing Personal Projects, Feb 2025 - Present
 - Courses: [Advanced Google Data Analytics](https://www.coursera.org/professional-certificates/google-advanced-data-analytics), [Meta Data Analytics](https://www.coursera.org/professional-certificates/meta-data-analyst), [Tableau Business Intelligence Analyst Professional Certificate](https://www.coursera.org/professional-certificates/tableau-business-intelligence-analyst)
-- Areas of study include: Data Storytelling, SQL, Python, Tableau, Statistics and Machine Learning. 
+- Areas of study include: Data Storytelling, SQL, Python, Tableau, Power BI, Statistics and Machine Learning. 
 - Furthermore, building out a personal portfolio of Data Projects, linked below in 'Projects' Section.
 
 ### Splunk Consultant @ Apto Solutions, UK  Sept 2020 - Jan 2025
