@@ -87,10 +87,10 @@ stakeholders, significantly improving the efficiency of vaccine distribution.
 
 
 
-### [Covid 19](https://github.com/olidare/Data-Analytics---Covid-Analysis)
+### [Misc-Projects](https://github.com/olidare/Data-Analytics---Smaller-Projects)
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <a href="https://github.com/olidare/Data-Analytics---Covid-Analysis" target="_blank">
-    <img src="/Assets/covid.png" width="720" height="280" style="object-fit: cover;" />  
+  <a href="https://github.com/olidare/Data-Analytics---Smaller-Projects" target="_blank">
+    <img src="/Assets/Small-Project-Management.png" width="720" height="280" style="object-fit: cover;" />  
   </a>
 </div>
