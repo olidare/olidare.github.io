@@ -94,3 +94,5 @@ stakeholders, significantly improving the efficiency of vaccine distribution.
     <img src="/Assets/Small-Project-Management.png" width="720" height="280" style="object-fit: cover;" />  
   </a>
 </div>
+
+- A collection of useful code and smaller projects.
