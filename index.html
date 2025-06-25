@@ -122,14 +122,6 @@
             padding: 5rem 2rem;
             display: flex;
             align-items: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .container {
@@ -280,34 +272,6 @@
             gap: 1rem;
         }
 
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tech-badge {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .project-language {
-            background: var(--
-
         .project-link {
             padding: 0.5rem 1rem;
             border-radius: 6px;
@@ -334,6 +298,22 @@
 
         .project-link.secondary:hover {
             background: #e2e8f0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
         /* About Section */
@@ -582,40 +562,9 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), #3b82f6);
-            z-index: 999;
-            transition: width 0.3s ease;
-        }
     </style>
 </head>
 <body>
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator"></div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -641,14 +590,14 @@
             <div class="container">
                 <div class="home-content">
                     <div class="hero-text">
-                        <h1>Data Analyst & Technical Consultant</h1>
+                        <h1>Data Analyst</h1>
                         <p class="subtitle">Transforming Complex Data into Strategic Insights</p>
                         <p>With over 4 years of expertise in Big Data Analytics through Splunk, I help organizations leverage their data for strategic value and transformation. Currently expanding my skills in SQL, Python, Statistics, and Tableau to drive data-driven decision making.</p>
                         <a href="#projects" class="cta-button">View My Work</a>
                     </div>
                     <div class="hero-image">
                         <div class="profile-pic">
-                            <!-- Replace with your actual image -->
+                            <img src="Assets/IMG_1518.JPG">
                             <div style="font-size: 4rem; color: var(--text-secondary);">👨‍💻</div>
                         </div>
                     </div>
@@ -668,9 +617,14 @@
                         <div class="project-thumbnail">📊</div>
                         <h3>Waze Navigation Analytics</h3>
                         <p>Advanced Google Data Analytics project analyzing real-world navigation data to identify usage patterns and optimization opportunities for the Waze app.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Tableau</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">View Project</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
+                            <a href="https://github.com/olidare" class="project-link primary" target="_blank">View Project</a>
+                            <a href="#" class="project-link secondary">Live Demo</a>
                         </div>
                     </div>
                     
@@ -678,48 +632,28 @@
                         <div class="project-thumbnail">🎵</div>
                         <h3>Music Streaming Analytics</h3>
                         <p>Collaboration with a Colombian artist to analyze streaming data, identify growth patterns, and provide actionable insights for audience engagement and market expansion.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Data Analysis</span>
+                            <span class="tech-badge">Visualization</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">View Project</a>
+                            <a href="https://github.com/olidare" class="project-link primary" target="_blank">View Project</a>
                             <a href="#" class="project-link secondary">GitHub</a>
                         </div>
                     </div>
-                    
-                    <div class="project-card">
-                        <div class="project-thumbnail">🏥</div>
-                        <h3>NHS COVID Analytics Dashboard</h3>
-                        <p>Implemented comprehensive monitoring solution for nationwide COVID test and vaccine distribution, featuring custom visualizations and alerting systems presented at Splunk Conf22.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link primary">View Project</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-thumbnail">🏦</div>
-                        <h3>Banking ETL Pipeline</h3>
-                        <p>Designed and implemented ETL processes for Lloyds Bank to standardize multiple data feeds and extract actionable insights from transaction data.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link primary">View Project</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-thumbnail">🔐</div>
-                        <h3>FinTech Security Analytics</h3>
-                        <p>Led security posture improvement for a major FinTech company using Splunk ES, including threat modeling, detective use cases, and C-suite reporting.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link primary">View Project</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
-                        </div>
-                    </div>
-                    
+
                     <div class="project-card">
                         <div class="project-thumbnail">⚙️</div>
                         <h3>Code Collection & Utils</h3>
                         <p>A curated collection of useful code snippets, automation scripts, and smaller projects for data analysis and technical consulting workflows.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Automation</span>
+                            <span class="tech-badge">Utils</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">View Project</a>
+                            <a href="https://github.com/olidare" class="project-link primary" target="_blank">View Project</a>
                             <a href="#" class="project-link secondary">GitHub</a>
                         </div>
                     </div>
@@ -826,14 +760,18 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
 
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+                if (navMenu) {
+                    navMenu.classList.remove('active');
+                }
             });
         });
 
@@ -861,198 +799,4 @@
                 const sectionTop = section.offsetTop - 100;
                 const sectionHeight = section.offsetHeight;
                 if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Scroll indicator
-        function updateScrollIndicator() {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.getElementById('scrollIndicator').style.width = scrollPercent + '%';
-        }
-
-        // Scroll animations
-        function handleScrollAnimations() {
-            const sections = document.querySelectorAll('.section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (sectionTop < windowHeight * 0.8) {
-                    section.classList.add('visible');
-                }
-            });
-        }
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
-
-        // Scroll event listeners
-        window.addEventListener('scroll', () => {
-            updateActiveNavLink();
-            updateScrollIndicator();
-            handleScrollAnimations();
-        });
-
-        // Initialize animations on load
-        window.addEventListener('load', () => {
-            handleScrollAnimations();
-            loadProjectsFromGitHub();
-        });
-
-        // GitHub API integration to fetch projects and README content
-        async function loadProjectsFromGitHub() {
-            const username = 'olidare'; // Replace with your GitHub username
-            const projectsContainer = document.querySelector('.projects-grid');
-            
-            try {
-                // Fetch user repositories
-                const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=10`);
-                const repos = await reposResponse.json();
-                
-                // Filter out the GitHub Pages repo and other non-project repos
-                const projectRepos = repos.filter(repo => 
-                    !repo.name.includes('.github.io') && 
-                    !repo.fork && 
-                    repo.description
-                );
-
-                // Clear existing project cards
-                projectsContainer.innerHTML = '';
-
-                // Limit to top 6 projects
-                const topProjects = projectRepos.slice(0, 6);
-
-                for (const repo of topProjects) {
-                    await createProjectCard(repo, projectsContainer);
-                }
-            } catch (error) {
-                console.error('Error fetching GitHub data:', error);
-                // Keep the default project cards if API fails
-            }
-        }
-
-        async function createProjectCard(repo, container) {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            
-            // Try to fetch README for more detailed description
-            let description = repo.description || 'No description available';
-            let technologies = [];
-            
-            try {
-                const readmeResponse = await fetch(`https://api.github.com/repos/${repo.owner.login}/${repo.name}/readme`);
-                if (readmeResponse.ok) {
-                    const readmeData = await readmeResponse.json();
-                    const readmeContent = atob(readmeData.content);
-                    
-                    // Extract first paragraph or summary from README
-                    const firstParagraph = extractFirstParagraph(readmeContent);
-                    if (firstParagraph && firstParagraph.length > description.length) {
-                        description = firstParagraph;
-                    }
-                    
-                    // Extract technologies/tools mentioned
-                    technologies = extractTechnologies(readmeContent);
-                }
-            } catch (error) {
-                console.log(`Could not fetch README for ${repo.name}`);
-            }
-
-            // Generate project icon based on repo name or language
-            const icon = getProjectIcon(repo.name, repo.language);
-            
-            // Create tech stack badges
-            const techBadges = technologies.length > 0 ? 
-                `<div class="tech-stack">${technologies.map(tech => 
-                    `<span class="tech-badge">${tech}</span>`
-                ).join('')}</div>` : '';
-
-            card.innerHTML = `
-                <div class="project-thumbnail">${icon}</div>
-                <h3>${repo.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h3>
-                <p>${description.substring(0, 150)}${description.length > 150 ? '...' : ''}</p>
-                ${techBadges}
-                <div class="project-meta">
-                    <span class="project-language">${repo.language || 'Multiple'}</span>
-                    <span class="project-stars">⭐ ${repo.stargazers_count}</span>
-                </div>
-                <div class="project-links">
-                    <a href="${repo.html_url}" class="project-link primary" target="_blank">View Project</a>
-                    ${repo.homepage ? `<a href="${repo.homepage}" class="project-link secondary" target="_blank">Live Demo</a>` : ''}
-                </div>
-            `;
-            
-            container.appendChild(card);
-        }
-
-        function extractFirstParagraph(readmeContent) {
-            // Remove markdown headers and get first meaningful paragraph
-            const lines = readmeContent.split('\n');
-            for (let line of lines) {
-                line = line.trim();
-                if (line && !line.startsWith('#') && !line.startsWith('!') && line.length > 50) {
-                    // Clean up markdown formatting
-                    return line.replace(/[*_`]/g, '').substring(0, 200);
-                }
-            }
-            return null;
-        }
-
-        function extractTechnologies(readmeContent) {
-            const techKeywords = [
-                'Python', 'JavaScript', 'React', 'Node.js', 'HTML', 'CSS', 'SQL', 
-                'Splunk', 'Tableau', 'AWS', 'Docker', 'Git', 'MongoDB', 'PostgreSQL',
-                'Flask', 'Django', 'Vue.js', 'Angular', 'TypeScript', 'Java', 'C++'
-            ];
-            
-            const foundTech = [];
-            const contentUpper = readmeContent.toUpperCase();
-            
-            techKeywords.forEach(tech => {
-                if (contentUpper.includes(tech.toUpperCase()) && !foundTech.includes(tech)) {
-                    foundTech.push(tech);
-                }
-            });
-            
-            return foundTech.slice(0, 4); // Limit to 4 technologies
-        }
-
-        function getProjectIcon(repoName, language) {
-            const name = repoName.toLowerCase();
-            
-            if (name.includes('data') || name.includes('analytic')) return '📊';
-            if (name.includes('web') || name.includes('site')) return '🌐';
-            if (name.includes('api') || name.includes('server')) return '⚡';
-            if (name.includes('mobile') || name.includes('app')) return '📱';
-            if (name.includes('game')) return '🎮';
-            if (name.includes('bot') || name.includes('automation')) return '🤖';
-            if (name.includes('ml') || name.includes('ai')) return '🧠';
-            if (name.includes('crypto') || name.includes('blockchain')) return '⛓️';
-            
-            // Language-based icons
-            switch(language) {
-                case 'Python': return '🐍';
-                case 'JavaScript': return '⚡';
-                case 'Java': return '☕';
-                case 'HTML': return '🌐';
-                case 'CSS': return '🎨';
-                case 'SQL': return '🗃️';
-                default: return '💻';
-            }
-        }
+                    current = section.getAttribute
