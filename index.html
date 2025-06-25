@@ -242,8 +242,12 @@
         }
 
         .project-thumbnail {
-            width: 100%;
-            height: 200px;
+ 	   		max-width: 100%; /* Ensures the image won't exceed the width of its parent */
+    		height: auto;    /* Maintains the aspect ratio of the image */
+   			display: block;  /* Removes any extra space below the image */
+ 		 	object-fit: cover; /* This is good for maintaining aspect ratio while covering the area */
+ 		  	width: 100%; /* Explicitly set width to 100% to fill the container */
+ 		  	height: 100%; /* Explicitly se */
             background: var(--secondary-color);
             border-radius: 8px;
             margin-bottom: 1.5rem;
@@ -253,6 +257,7 @@
             color: var(--text-secondary);
             font-size: 3rem;
         }
+        
 
         .project-card h3 {
             font-size: 1.5rem;
