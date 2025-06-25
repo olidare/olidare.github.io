@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         * {
             margin: 0;
@@ -129,7 +131,96 @@
             transition: 0.3s;
             border-radius: 3px;
         }
+/* NEW: Styles for the fixed social panel */
+.fixed-social-panel {
+    position: fixed;
+    left: 0;
+    top: 50%; /* Start vertical positioning from the middle */
+    transform: translateY(-50%); /* Adjust to truly center it vertically */
+    width: 60px; /* Adjust as needed for your icon size */
+    background-color: white; /* Or rgba(255, 255, 255, 0.95) for transparency */
+    box-shadow: var(--shadow-lg);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 999; /* Below navbar, above main content */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center icons horizontally within the panel */
+    padding: 1rem 0; /* Vertical padding */
+    gap: 1.5rem; /* Space between icons */
+}
 
+/* Adjustments for the individual contact links within the fixed panel */
+.fixed-social-panel .contact-link {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically within each link */
+    align-items: center; /* Center content within each link */
+    gap: 0.25rem; /* Space between icon and text */
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    padding: 0.5rem; /* Padding around each icon/text block */
+    border-radius: 4px;
+}
+
+.fixed-social-panel .contact-link:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color); /* Light background on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Styles for the Font Awesome icons themselves */
+.contact-icon-fa {
+    font-size: 1.8rem; /* Size of the icons */
+    color: var(--primary-color); /* Icon color */
+    transition: color 0.2s ease;
+}
+
+.fixed-social-panel .contact-link:hover .contact-icon-fa {
+    color: #1d4ed8; /* Darker primary on hover */
+}
+
+/* Hide the text label for the icons in the fixed panel by default */
+.fixed-social-panel .contact-text {
+    font-size: 0.7rem; /* Smaller text for labels */
+    opacity: 0; /* Hidden by default */
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease, max-height 0.2s ease;
+}
+
+/* Show the text label on hover (optional, for a tooltip-like effect) */
+.fixed-social-panel .contact-link:hover .contact-text {
+    opacity: 1;
+    max-height: 20px; /* Allow text to show */
+}
+
+/* Adjust the main content to prevent overlap with the fixed panel */
+.main-content {
+    padding-top: 70px; /* Existing padding for navbar */
+    padding-left: 60px; /* NEW: Equal to the width of the fixed-social-panel */
+}
+
+/* Consider adjusting responsive design for small screens */
+@media (max-width: 768px) {
+    .fixed-social-panel {
+        display: none; /* Hide fixed social panel on smaller screens if it clutters layout */
+        /* OR, if you want it at the bottom for mobile: */
+        /* top: auto; */
+        /* bottom: 40px; */ /* Above your cta-footer */
+        /* left: 50%; */
+        /* transform: translateX(-50%); */
+        /* width: 100%; */
+        /* flex-direction: row; */
+        /* border-radius: 8px 8px 0 0; */
+        /* padding: 0.5rem; */
+        /* justify-content: space-around; */
+    }
+
+    .main-content {
+        padding-left: 0; /* Remove padding if panel is hidden or moved */
+    }
+}
         /* Main Content */
         .main-content {
             padding-top: 70px;
@@ -591,7 +682,6 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
@@ -600,9 +690,23 @@
             </div>
         </div>
     </nav>
-    <div class="cta-footer">
-      <p><a href="#contact">To get in contact</a></p>
-    </div>
+    <div class="fixed-social-panel">
+        <a href="mailto:odare3@gmail.com" class="contact-link" title="Email Me">
+            <i class="fas fa-envelope contact-icon-fa"></i>
+            <span class="contact-text">Email Me</span>
+        </a>
+        <a href="https://www.linkedin.com/in/oli-dare-7741361b9/" class="contact-link" target="_blank" title="LinkedIn Profile">
+            <i class="fab fa-linkedin-in contact-icon-fa"></i>
+            <span class="contact-text">LinkedIn</span>
+        </a>
+        <a href="https://github.com/olidare" class="contact-link" target="_blank" title="GitHub Profile">
+            <i class="fab fa-github contact-icon-fa"></i>
+            <span class="contact-text">GitHub</span>
+        </a>
+        <a href="https://public.tableau.com/app/profile/oliver.dare/vizzes" class="contact-link" target="_blank" title="Tableau Public Profile">
+            <i class="fas fa-chart-bar contact-icon-fa"></i> <span class="contact-text">Tableau</span>
+        </a>
+    </div> 
     <!-- Main Content -->
     <main class="main-content">
         <!-- Home Section -->
@@ -733,7 +837,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section 
         <section id="contact" class="section">
             <div class="container">
                 <div class="section-header">
@@ -786,7 +890,7 @@
                     
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
 
     <script>
