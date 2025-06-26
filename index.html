@@ -35,15 +35,13 @@
         }
 
         .cta-footer {
-          position: fixed;
-          bottom: 0;
-          width: 100%;
-          background: var(--primary-color);
-          color: white;
-          text-align: center;
-          padding: 0.8rem;
-          font-weight: 500;
-          z-index: 100;
+  			position: bottom
+  			background: var(--primary-color);
+  			color: white;
+  			text-align: center;
+ 			padding: 0.8rem;
+ 			font-weight: 500;
+  			margin-top: 3rem;
         }
         
         .cta-footer a {
@@ -671,6 +669,126 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* NEW: Footer Styles */
+.footer {
+    background-color: var(--text-primary); /* A dark background similar to the example */
+    color: white; /* Light text color */
+    padding: 2.5rem 2rem; /* Vertical and horizontal padding */
+    text-align: center; /* Center the text */
+    margin-top: 5rem; /* Add some space above the footer */
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer p {
+    font-size: 0.9rem; /* Smaller font size for copyright text */
+    line-height: 1.5;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+.footer p a {
+    color: white; /* Ensure links are white */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer p a:hover {
+    color: var(--primary-color); /* Highlight links on hover */
+}
+
+/* Hide line break on larger screens, only show on mobile */
+.mobile-break {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 1rem; /* Adjust padding for smaller screens */
+    }
+    .mobile-break {
+        display: block; /* Show line break on mobile */
+    }
+}
+/* NEW: Styles for the top social icons section (like Hailee's) */
+.top-social-icons-section {
+    background-color: var(--primary-color);
+    padding: 0.8rem 0; /* Made smaller */
+    text-align: center;
+    margin-top: 70px;
+    position: relative;
+    z-index: 99;
+    box-shadow: var(--shadow-md);
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 1.5rem; /* Space between icons */
+    /* Ensure the container itself doesn't exceed a max-width if desired */
+    max-width: 1200px; /* Or a smaller width if you want them grouped tighter */
+    margin: 0 auto; /* Center the container */
+    padding: 0 2rem; /* Horizontal padding for responsiveness */
+}
+
+.top-social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Square icon size */
+    height: 48px;
+    border-radius: 8px; /* Slightly rounded corners */
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent white background */
+    color: white; /* Icon color */
+    font-size: 1.5rem; /* Icon size */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.top-social-icon-link:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* More opaque white on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: var(--shadow-sm); /* Subtle shadow on hover */
+}
+
+/* Adjust Main Content padding to account for this new section */
+.main-content {
+    /* Previous padding-top was 70px for the navbar.
+       Now we need to account for the navbar (70px) + the new section (approx 86px for 1.5rem top/bottom padding + 70px margin-top) */
+    /* Let's adjust this to a more robust approach, or remove it and let sections handle their own top padding */
+    padding-top: 0; /* Remove this as we'll use margin-top on sections */
+    padding-left: 60px; /* Existing padding for fixed-social-panel */
+}
+
+/* Adjust all sections to have padding-top so they start below the social icons */
+.section {
+    /* Current: min-height: 100vh; padding: 5rem 2rem; display: flex; align-items: center; */
+    padding-top: 5rem; /* Ensure section content starts below the new social banner */
+    padding-bottom: 5rem;
+    min-height: calc(100vh - 70px - 86px); /* Optional: Adjust min-height to fit between fixed header/footer */
+    /* 70px navbar, 86px (approx) for the new social section */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-social-icons-section {
+        padding: 1rem 0; /* Smaller padding on mobile */
+        margin-top: 70px; /* Still below navbar */
+    }
+
+    .social-icons-container {
+        gap: 1rem; /* Closer spacing on mobile */
+    }
+
+    .top-social-icon-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -682,6 +800,7 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
@@ -837,7 +956,7 @@
             </div>
         </section>
 
-        <!-- Contact Section 
+        <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
                 <div class="section-header">
@@ -866,31 +985,30 @@
                             <button type="submit" class="submit-btn">Send Message</button>
                         </form>
                     </div>
-                    <div class="contact-info">
-                        <h3>Connect With Me</h3>
-                        <div class="contact-links">
-                            <a href="mailto:odare3@gmail.com" class="contact-link">
-                                <div class="contact-icon">📧</div>
-                                <span>Email Me</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/oli-dare-7741361b9/" class="contact-link" target="_blank">
-                                <div class="contact-icon">💼</div>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://github.com/olidare" class="contact-link" target="_blank">
-                                <div class="contact-icon">💻</div>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://public.tableau.com/app/profile/oliver.dare/vizzes" class="contact-link" target="_blank">
-                                <div class="contact-icon">📊</div>
-                                <span>Tableau</span>
-                            </a>
-                        </div>
-                    </div>
                     
                 </div>
             </div>
-        </section> -->
+        </section> 
+    <div class="cta-footer">
+    	<section class="top-social-icons-section">
+    	    <div class="section-header">
+            	<h2><font color="white">Professional Network</font></h2>
+            </div>
+        	<div class="container social-icons-container">
+            <a href="https://www.linkedin.com/in/oli-dare-7741361b9/" target="_blank" class="top-social-icon-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/olidare" target="_blank" class="top-social-icon-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://public.tableau.com/app/profile/oliver.dare/vizzes" target="_blank" class="top-social-icon-link" title="Tableau Public">
+                <i class="fas fa-chart-bar"></i> </a>
+            <a href="mailto:odare3@gmail.com" class="top-social-icon-link" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            </div>
+    	</section>
+    </div>
     </main>
 
     <script>
