@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oli Dare - Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -21,19 +21,329 @@
             --secondary-color: #f8fafc;
             --text-primary: #1e293b;
             --text-secondary: #64748b;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --accent-color: #10b981;
+            --icon-color: #4f2ab5;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary); 
-            background-color: #FAFAFA;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            color: white; /* Added to ensure all text is white by default */
+        }
+        
+		.main-content {
+			padding-top: 70px; 
+			padding-left: 60px;
+		}
+		
+		.standard-section {
+		  min-height: 100vh;
+		  padding: 5rem 2rem;
+		  text-align: center;
+		}
+		
+		        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .greeting {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .dynamic-text {
+            display: inline-block;
+            position: relative;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #10b981, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            animation: underlineGrow 2s ease-out 2s forwards;
+        }
+
+        .typewriter {
+            border-right: 2px solid #10b981;
+            animation: blink 1s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.5s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 2s forwards;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 2.5s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .hero-image {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+
+        .profile-pic {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-pic::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, #10b981, transparent);
+            animation: rotate 3s linear infinite;
+            opacity: 0.6;
+        }
+
+        .profile-pic::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .profile-pic img {
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-icon:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-icon:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes underlineGrow {
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                border-color: #10b981;
+            }
+            51%, 100% {
+                border-color: transparent;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .profile-pic {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        
         .cta-footer {
   			position: bottom
   			background: var(--primary-color);
@@ -48,14 +358,162 @@
           color: #fff;
           text-decoration: underline;
         }
+                /* NEW: Footer Styles */
+		.footer {
+		  			position: bottom
+			background-color: var(--text-primary); /* A dark background similar to the example */
+			color: white; /* Light text color */
+			padding: 2.5rem 2rem; /* Vertical and horizontal padding */
+			text-align: center; /* Center the text */
+			margin-top: 5rem; /* Add some space above the footer */
+		}
+		
+		.footer .container {
+			max-width: 1200px;
+			margin: 0 auto;
+			width: 100%;
+		}
+		
+		.footer p {
+			font-size: 0.9rem; /* Smaller font size for copyright text */
+			line-height: 1.5;
+			margin: 0; /* Remove default paragraph margin */
+		}
+		
+		.footer p a {
+			color: white; /* Ensure links are white */
+			text-decoration: underline;
+			transition: color 0.3s ease;
+		}
+		
+		.footer p a:hover {
+			color: var(--primary-color); /* Highlight links on hover */
+		}
+		
+		/* Hide line break on larger screens, only show on mobile */
+		.mobile-break {
+			display: none;
+		}
 
-
-        /* Navigation */
+		@media (max-width: 768px) {
+			.footer {
+				padding: 2rem 1rem; /* Adjust padding for smaller screens */
+			}
+			.mobile-break {
+				display: block; /* Show line break on mobile */
+			}
+		}
+		/* NEW: Styles for the top social icons section  */
+		.top-social-icons-section {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			padding: 0.8rem 0; /* Made smaller */
+			text-align: center;
+			margin-top: 70px;
+			position: relative;
+			z-index: 99;
+			box-shadow: var(--shadow-md);
+		}
+		
+		.social-icons-container {
+			display: flex;
+			justify-content: center; /* Center the icons horizontally */
+			gap: 1.5rem; /* Space between icons */
+			/* Ensure the container itself doesn't exceed a max-width if desired */
+			max-width: 1200px; /* Or a smaller width if you want them grouped tighter */
+			margin: 0 auto; /* Center the container */
+			padding: 0 2rem; /* Horizontal padding for responsiveness */
+		}
+		
+		.top-social-icon-link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 48px; /* Square icon size */
+			height: 48px;
+			border-radius: 8px; /* Slightly rounded corners */
+			background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent white background */
+			color: white; /* Icon color */
+			font-size: 1.5rem; /* Icon size */
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+		
+		.top-social-icon-link:hover {
+			background-color: rgba(255, 255, 255, 0.3); /* More opaque white on hover */
+			transform: translateY(-2px); /* Slight lift effect */
+			box-shadow: var(--shadow-sm); /* Subtle shadow on hover */
+		}
+		/* NEW: Updated styles for the fixed social panel to match footer */
+		.fixed-social-panel {
+			position: fixed;
+			left: 0;
+			top: 50%; /* Start vertical positioning from the middle */
+			transform: translateY(-50%); /* Adjust to truly center it vertically */
+			width: 60px; /* Adjust as needed for your icon size */
+            background-color: var(--text-primary); /* Match footer background */
+			border-top-right-radius: 8px;
+			border-bottom-right-radius: 8px;
+			z-index: 999; /* Below navbar, above main content */
+			display: flex;
+			flex-direction: column; /* Stack items vertically */
+			align-items: center; /* Center icons horizontally within the panel */
+			padding: 1rem 0; /* Vertical padding */
+			gap: 1.5rem; /* Space between icons */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		
+		/* Adjustments for the individual contact links within the fixed panel */
+		.fixed-social-panel .contact-link {
+			display: flex;
+			flex-direction: column; /* Stack icon and text vertically within each link */
+			align-items: center; /* Center content within each link */
+			gap: 0.25rem; /* Space between icon and text */
+			text-decoration: none;
+			color: white; /* Changed to white to match footer */
+			transition: all 0.2s ease;
+			padding: 0.5rem; /* Padding around each icon/text block */
+			border-radius: 4px;
+		}
+		
+		.fixed-social-panel .contact-link:hover {
+			color: white;
+			background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+			transform: scale(1.05); /* Slight zoom effect */
+		}
+		
+		/* Styles for the Font Awesome icons themselves */
+		.contact-icon-fa {
+			font-size: 1.8rem; /* Size of the icons */
+			color: white; /* Changed to white to match footer */
+			transition: color 0.2s ease;
+		}
+		
+		.fixed-social-panel .contact-link:hover .contact-icon-fa {
+			color: var(--accent-color); /* Accent color on hover */
+		}
+		
+		/* Hide the text label for the icons in the fixed panel by default */
+		.fixed-social-panel .contact-text {
+			font-size: 0.7rem; /* Smaller text for labels */
+            color: white; /* Ensure text is white */
+			opacity: 0; /* Hidden by default */
+			max-height: 0;
+			overflow: hidden;
+			transition: opacity 0.2s ease, max-height 0.2s ease;
+		}
+		
+		/* Show the text label on hover (optional, for a tooltip-like effect) */
+		.fixed-social-panel .contact-link:hover .contact-text {
+			opacity: 1;
+			max-height: 20px; /* Allow text to show */
+		}    
+		
+		/* Navigation */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #FAFAFA;
+            background: linear-gradient(115deg, #667eea 0%, #764ba2 100%);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
@@ -75,7 +533,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: white; /* Changed to white */
             text-decoration: none;
         }
 
@@ -87,7 +545,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: var(--text-primary);
+            color: white; /* Changed to white */
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
@@ -95,7 +553,7 @@
 
         .nav-link:hover,
         .nav-link.active {
-            color: var(--primary-color);
+            color: var(--accent-color); /* Changed to accent color */
         }
 
         .nav-link::after {
@@ -105,7 +563,7 @@
             height: 2px;
             bottom: -5px;
             left: 50%;
-            background-color: var(--primary-color);
+            background-color: var(--accent-color); /* Changed to accent color */
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -125,677 +583,270 @@
         .mobile-menu-btn span {
             width: 25px;
             height: 3px;
-            background: var(--text-primary);
+            background: white; /* Changed to white */
             transition: 0.3s;
             border-radius: 3px;
         }
-/* NEW: Styles for the fixed social panel */
-.fixed-social-panel {
-    position: fixed;
-    left: 0;
-    top: 50%; /* Start vertical positioning from the middle */
-    transform: translateY(-50%); /* Adjust to truly center it vertically */
-    width: 60px; /* Adjust as needed for your icon size */
-    background-color: white; /* Or rgba(255, 255, 255, 0.95) for transparency */
-    box-shadow: var(--shadow-lg);
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    z-index: 999; /* Below navbar, above main content */
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center icons horizontally within the panel */
-    padding: 1rem 0; /* Vertical padding */
-    gap: 1.5rem; /* Space between icons */
-}
-
-/* Adjustments for the individual contact links within the fixed panel */
-.fixed-social-panel .contact-link {
-    display: flex;
-    flex-direction: column; /* Stack icon and text vertically within each link */
-    align-items: center; /* Center content within each link */
-    gap: 0.25rem; /* Space between icon and text */
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: all 0.2s ease;
-    padding: 0.5rem; /* Padding around each icon/text block */
-    border-radius: 4px;
-}
-
-.fixed-social-panel .contact-link:hover {
-    color: var(--primary-color);
-    background-color: var(--secondary-color); /* Light background on hover */
-    transform: scale(1.05); /* Slight zoom effect */
-}
-
-/* Styles for the Font Awesome icons themselves */
-.contact-icon-fa {
-    font-size: 1.8rem; /* Size of the icons */
-    color: var(--primary-color); /* Icon color */
-    transition: color 0.2s ease;
-}
-
-.fixed-social-panel .contact-link:hover .contact-icon-fa {
-    color: #1d4ed8; /* Darker primary on hover */
-}
-
-/* Hide the text label for the icons in the fixed panel by default */
-.fixed-social-panel .contact-text {
-    font-size: 0.7rem; /* Smaller text for labels */
-    opacity: 0; /* Hidden by default */
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.2s ease, max-height 0.2s ease;
-}
-
-/* Show the text label on hover (optional, for a tooltip-like effect) */
-.fixed-social-panel .contact-link:hover .contact-text {
-    opacity: 1;
-    max-height: 20px; /* Allow text to show */
-}
-
-/* Adjust the main content to prevent overlap with the fixed panel */
-.main-content {
-    padding-top: 70px; /* Existing padding for navbar */
-    padding-left: 60px; /* NEW: Equal to the width of the fixed-social-panel */
-}
-
-/* Consider adjusting responsive design for small screens */
-@media (max-width: 768px) {
-    .fixed-social-panel {
-        display: none; /* Hide fixed social panel on smaller screens if it clutters layout */
-        /* OR, if you want it at the bottom for mobile: */
-        /* top: auto; */
-        /* bottom: 40px; */ /* Above your cta-footer */
-        /* left: 50%; */
-        /* transform: translateX(-50%); */
-        /* width: 100%; */
-        /* flex-direction: row; */
-        /* border-radius: 8px 8px 0 0; */
-        /* padding: 0.5rem; */
-        /* justify-content: space-around; */
-    }
-
-    .main-content {
-        padding-left: 0; /* Remove padding if panel is hidden or moved */
-    }
-}
-        /* Main Content */
-        .main-content {
-            padding-top: 70px;
-        }
-
-        .section {
-            min-height: 100vh;
-            padding: 5rem 2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        /* Home Section */
-        .home-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary-color), #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-        }
-
-        .cta-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .hero-image {
-            text-align: center;
-        }
-
-        .profile-pic {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-pic img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* Projects Section */
+                /* Project Cards */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .project-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 12px;
             padding: 2rem;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), #3b82f6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         .project-thumbnail {
             width: 100%;
             height: 200px;
-            background: var(--secondary-color);
             border-radius: 8px;
+            overflow: hidden;
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 3rem;
+        }
+
+        .project-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-card h3 {
             font-size: 1.5rem;
-            font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .project-card p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .project-link.primary {
-            background: var(--primary-color);
             color: white;
         }
 
-        .project-link.primary:hover {
-            background: #1d4ed8;
-        }
-
-        .project-link.secondary {
-            background: var(--secondary-color);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .project-link.secondary:hover {
-            background: #e2e8f0;
+        .project-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .tech-badge {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            text-align: left;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .skill-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .skill-item h4 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-primary);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--primary-color);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
             font-size: 0.8rem;
+            font-weight: 500;
         }
 
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
+        .project-link {
+            display: inline-block;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+        .project-link:hover {
+            color: var(--accent-color);
         }
 
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: white;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: var(--shadow-md);
-                padding: 2rem 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .home-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 3rem 1rem;
-            }
-
-            .profile-pic {
-                width: 250px;
-                height: 250px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* NEW: Footer Styles */
-.footer {
-    background-color: var(--text-primary); /* A dark background similar to the example */
-    color: white; /* Light text color */
-    padding: 2.5rem 2rem; /* Vertical and horizontal padding */
-    text-align: center; /* Center the text */
-    margin-top: 5rem; /* Add some space above the footer */
-}
-
-.footer .container {
+      /* About Section */
+		.about-content {
+			max-width: 800px;
+			margin: 0 auto;
+			text-align: left;
+		}
+		
+		/* Target only direct paragraphs in about-content */
+		.about-content > p {
+			color: white; /* Make these paragraphs white */
+			margin-bottom: 1.5rem;
+			line-height: 1.7;
+		}
+		
+		/* Skills Grid - keep existing styles */
+		.skills-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1.5rem;
+			margin-top: 3rem;
+		}
+		
+		.skill-item {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			padding: 1.5rem;
+			border-radius: 8px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			transition: all 0.3s ease;
+		}
+		
+		.skill-item:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+		}
+		
+		.skill-item h4 {
+			color: var(--accent-color); /* Keep accent color for headings */
+			margin-bottom: 0.5rem;
+			font-size: 1.2rem;
+		}
+		
+		.skill-item p {
+			color: rgba(255, 255, 255, 0.7); /* Keep lighter color for skill text */
+			font-size: 0.9rem;
+		}
+		        /* Contact Section */
+#contact .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
+}
+
+#contact .contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#contact .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#contact .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+#contact .form-group input,
+#contact .form-group textarea {
     width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
-.footer p {
-    font-size: 0.9rem; /* Smaller font size for copyright text */
-    line-height: 1.5;
-    margin: 0; /* Remove default paragraph margin */
+#contact .form-group input:focus,
+#contact .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
-.footer p a {
-    color: white; /* Ensure links are white */
-    text-decoration: underline;
-    transition: color 0.3s ease;
+#contact .form-group textarea {
+    height: 120px;
+    resize: vertical;
 }
 
-.footer p a:hover {
-    color: var(--primary-color); /* Highlight links on hover */
-}
-
-/* Hide line break on larger screens, only show on mobile */
-.mobile-break {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .footer {
-        padding: 2rem 1rem; /* Adjust padding for smaller screens */
-    }
-    .mobile-break {
-        display: block; /* Show line break on mobile */
-    }
-}
-/* NEW: Styles for the top social icons section (like Hailee's) */
-.top-social-icons-section {
-    background-color: var(--primary-color);
-    padding: 0.8rem 0; /* Made smaller */
-    text-align: center;
-    margin-top: 70px;
-    position: relative;
-    z-index: 99;
-    box-shadow: var(--shadow-md);
-}
-
-.social-icons-container {
-    display: flex;
-    justify-content: center; /* Center the icons horizontally */
-    gap: 1.5rem; /* Space between icons */
-    /* Ensure the container itself doesn't exceed a max-width if desired */
-    max-width: 1200px; /* Or a smaller width if you want them grouped tighter */
-    margin: 0 auto; /* Center the container */
-    padding: 0 2rem; /* Horizontal padding for responsiveness */
-}
-
-.top-social-icon-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px; /* Square icon size */
-    height: 48px;
-    border-radius: 8px; /* Slightly rounded corners */
-    background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent white background */
-    color: white; /* Icon color */
-    font-size: 1.5rem; /* Icon size */
-    text-decoration: none;
+#contact .submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.top-social-icon-link:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* More opaque white on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: var(--shadow-sm); /* Subtle shadow on hover */
+#contact .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
 
-/* Adjust Main Content padding to account for this new section */
-.main-content {
-    /* Previous padding-top was 70px for the navbar.
-       Now we need to account for the navbar (70px) + the new section (approx 86px for 1.5rem top/bottom padding + 70px margin-top) */
-    /* Let's adjust this to a more robust approach, or remove it and let sections handle their own top padding */
-    padding-top: 0; /* Remove this as we'll use margin-top on sections */
-    padding-left: 60px; /* Existing padding for fixed-social-panel */
+#contact .contact-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
 }
 
-/* Adjust all sections to have padding-top so they start below the social icons */
-.section {
-    /* Current: min-height: 100vh; padding: 5rem 2rem; display: flex; align-items: center; */
-    padding-top: 5rem; /* Ensure section content starts below the new social banner */
-    padding-bottom: 5rem;
-    min-height: calc(100vh - 70px - 86px); /* Optional: Adjust min-height to fit between fixed header/footer */
-    /* 70px navbar, 86px (approx) for the new social section */
+#contact .contact-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-/* Responsive adjustments */
+#contact .contact-section-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+#contact .contact-section-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+#contact .contact-section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(16, 185, 129, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+/* Responsive adjustments for contact section */
 @media (max-width: 768px) {
-    .top-social-icons-section {
-        padding: 1rem 0; /* Smaller padding on mobile */
-        margin-top: 70px; /* Still below navbar */
-    }
-
-    .social-icons-container {
-        gap: 1rem; /* Closer spacing on mobile */
-    }
-
-    .top-social-icon-link {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+    #contact .contact-content {
+        grid-template-columns: 1fr;
     }
 }
+
+
+
     </style>
 </head>
 <body>
+    <div class="floating-elements">
+        <div class="floating-icon">📊</div>
+        <div class="floating-icon">🐍</div>
+        <div class="floating-icon">📈</div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Oli Dare</a>
+            <a href="#home" class="logo">       </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -826,169 +877,170 @@
             <i class="fas fa-chart-bar contact-icon-fa"></i> <span class="contact-text">Tableau</span>
         </a>
     </div> 
-    <!-- Main Content -->
     <main class="main-content">
-        <!-- Home Section -->
-        <section id="home" class="section">
-            <div class="container">
-                <div class="home-content">
-                    <div class="hero-text">
-                        <h1>Data Analyst</h1>
-                        <p class="subtitle">Transforming Complex Data into Strategic Insights</p>
-                        <p>With over 4 years of expertise in Big Data Analytics through Splunk, I help organizations leverage their data for strategic value and transformation. </p>
-                        <p>Committed to a career as a Data Analyst, I am diligently enhancing my practical skills in SQL, Python, Statistics, and Tableau. I am enthusiastic about contributing to a team in a Data Analyst capacity, where I can grow these emerging technical skills while applying my established data acumen.</p>
-                        <a href="#projects" class="cta-button">View My Work</a>
-                    </div>
-                    <div class="hero-image">
-                        <div class="profile-pic">
-                            <img src="Assets/IMG_1518.JPG">
-                            <div style="font-size: 4rem; color: var(--text-secondary);"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Featured Projects</h2>
-                    <p>A showcase of my work in data analytics and visualization</p>
-                </div>
-                <div class="projects-grid">
-                    <a href="https://github.com/olidare/Data-Analytics---Waze" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                                <img src="Assets/waze.png" width="200" height="200">
-                            </div>
-                            <h3>Waze Navigation Analytics</h3>
-                            <p>Advanced Google Data Analytics project analyzing real-world navigation data to identify usage patterns and optimization opportunities for the Waze app.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Data Analysis</span>
-                                <span class="tech-badge">Visualization</span>
-                            </div>
-                            <div class="project-links">
-                                <span class="project-link primary">View Project</span>
-                            </div>
-                        </div>
-                    </a>       
-                    <a href="https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                            	<img src="Assets/spotify.png" width="200" height="200">
-                            </div>
-                            <h3>Music Streaming Analytics</h3>
-                            <p>Collaboration with a Colombian artist to analyze streaming data, identify growth patterns, and provide actionable insights for audience engagement and market expansion.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Data Analysis</span>
-                                <span class="tech-badge">Visualization</span>
-                            </div>
-                            <div class="project-links">
-                                <span class="project-link primary">View Project</span>
-                            </div>
-                        </div>
-                     </a>       
-                    <a href="https://github.com/olidare/Data-Analytics---Smaller-Projects" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                            	<img src="Assets/Small-Project-Management.png" width="200" height="200">
-                            </div>
-                            <h3>Miscellaneous Smaller Projects</h3>
-                            <p>A curated collection of smaller projects, useful code snippets and learning resources for data analysis.</p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">SQL</span>
-                                <span class="tech-badge">Tableau</span>
-                                <span class="tech-badge">Splunk</span>
-                            </div>
-                            <div class="project-links">
-                                <span class="project-link primary">View Project</span>
-                            </div>
-                        </div>
-                    </a>      
-                </div>
+    <section id="home" class="standard-section">
+    <div class="hero-container">
+        <div class="hero-text">
+            <div class="greeting">Hi there, I'm Oli Dare.</div>
+            <h1 class="hero-title">
+                 <span class="highlight dynamic-text" id="typewriter"></span>
+            </h1>
+            <p class="subtitle">Welcome to my Data Portfolio</p>
+            <p class="hero-description">
+                Passionate about deriving strategic insights from complex data through compelling storytelling and impactful visualizations.
+            </p>
+            <a href="#projects" class="cta-button">
+                View My Work
+                <span>→</span>
+            </a>
+        </div>
+        <div class="hero-image">
+            <div class="profile-pic">
+                <img src="Assets/IMG_1518.JPG" alt="Oli Dare">
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="about-content">
-                    <h2>About Me</h2>
-                    <p>I'm a Technical Consultant with over 4 years of expertise in Big Data Analytics and Intelligence through Splunk. My passion lies in transforming complex datasets into compelling visualizations and actionable insights that drive strategic business decisions.</p>
-                    
-                    <p>Throughout my career, I've been highly proficient with Splunk for Data Onboarding, ETL processes, and Data Optimization. I've had the privilege of working with prestigious organizations including the NHS, Lloyds Bank, and various FinTech companies, delivering solutions that significantly impact their operational efficiency and strategic planning.</p>
-                    
-                    <p>Currently, I'm pivoting toward a broader Data Analyst role by expanding my proficiency in SQL, Python, Statistics, and Tableau. This evolution allows me to offer a more comprehensive approach to data analysis and visualization across different platforms and methodologies.</p>
-                    
-                    <p>I'm passionate about understanding data at its core and helping organizations leverage their data assets for strategic value and digital transformation. Whether it's implementing monitoring solutions for nationwide healthcare initiatives or developing security analytics for financial institutions, I thrive on turning data challenges into opportunities for growth and improvement.</p>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <h4>Analytics Platforms</h4>
-                            <p>Splunk, Tableau, Excel</p>
+        </div>
+    </div>
+    </section>
+    
+    <section id="projects" class="standard-section">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-description">A showcase of my work in data analytics and visualization</p>
+        </div>
+        
+        <div class="projects-container">
+            <div class="projects-grid">
+                <!-- Your project cards here -->
+                <a href="https://github.com/olidare/Data-Analytics---Waze" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <div class="project-thumbnail">
+                            <img src="Assets/waze.png">
                         </div>
-                        <div class="skill-item">
-                            <h4>Programming</h4>
-                            <p>Python, SQL, SPL</p>
+                        <h3>Waze Navigation Analytics</h3>
+                        <p>Advanced Google Data Analytics project analyzing real-world navigation data to identify usage patterns and optimization opportunities for the Waze app.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Data Analysis</span>
+                            <span class="tech-badge">Visualization</span>
                         </div>
-                        <div class="skill-item">
-                            <h4>Data Engineering</h4>
-                            <p>ETL, Data Onboarding, Optimization</p>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Visualization</h4>
-                            <p>Dashboards, Custom Charts, Reporting</p>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Cloud Platforms</h4>
-                            <p>AWS, Splunk Cloud</p>
-                        </div>
-                        <div class="skill-item">
-                            <h4>Security Analytics</h4>
-                            <p>Threat Modeling, Risk Assessment</p>
+                        <div class="project-links">
+                            <span class="project-link">View Project →</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Get In Touch</h2>
-                    <p>Let's discuss how data analytics can drive your business forward</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
+                </a>
+            
+            <a href="https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="Assets/spotify.png">
                     </div>
-                    
+                    <h3>Music Streaming Analytics</h3>
+                    <p>Collaboration with a Colombian artist to analyze streaming data, identify growth patterns, and provide actionable insights for audience engagement and market expansion.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Data Analysis</span>
+                        <span class="tech-badge">Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link">View Project →</span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://github.com/olidare/Data-Analytics---Smaller-Projects" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="Assets/Small-Project-Management.png">
+                    </div>
+                    <h3>Miscellaneous Smaller Projects</h3>
+                    <p>A curated collection of smaller projects, useful code snippets and learning resources for data analysis.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">Tableau</span>
+                        <span class="tech-badge">Splunk</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link">View Project →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="standard-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I'm a Technical Consultant with over 4 years of expertise in Big Data Analytics and Intelligence through Splunk. My passion lies in transforming complex datasets into compelling visualizations and actionable insights that drive strategic business decisions.</p>
+            
+            <p>Throughout my career, I've been highly proficient with Splunk for Data Onboarding, ETL processes, and Data Optimization. I've had the privilege of working with prestigious organizations including the NHS, Lloyds Bank, and various FinTech companies, delivering solutions that significantly impact their operational efficiency and strategic planning.</p>
+            
+            <p>Currently, I'm pivoting toward a broader Data Analyst role by expanding my proficiency in SQL, Python, Statistics, and Tableau. This evolution allows me to offer a more comprehensive approach to data analysis and visualization across different platforms and methodologies.</p>
+            
+            <p>I'm passionate about understanding data at its core and helping organizations leverage their data assets for strategic value and digital transformation. Whether it's implementing monitoring solutions for nationwide healthcare initiatives or developing security analytics for financial institutions, I thrive on turning data challenges into opportunities for growth and improvement.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>Analytics Platforms</h4>
+                    <p>Splunk, Tableau, Excel</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Programming</h4>
+                    <p>Python, SQL, SPL</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Data Engineering</h4>
+                    <p>ETL, Data Onboarding, Optimization</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Visualization</h4>
+                    <p>Dashboards, Custom Charts, Reporting</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Cloud Platforms</h4>
+                    <p>AWS, Splunk Cloud</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Security Analytics</h4>
+                    <p>Threat Modeling, Risk Assessment</p>
                 </div>
             </div>
-        </section> 
+        </div>
+    </section>
+		<!-- Contact Section -->
+	<section id="contact" class="section">
+		<div class="container">
+			<div class="section-header">
+				<h2>Get In Touch</h2>
+				<p>Let's discuss how data analytics can drive your business forward</p>
+			</div>
+			<div class="contact-content">
+				<div class="contact-form">
+					<form id="contactForm">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="subject">Subject</label>
+							<input type="text" id="subject" name="subject" required>
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" required></textarea>
+						</div>
+						<button type="submit" class="submit-btn">Send Message</button>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</section> 
     <div class="cta-footer">
     	<section class="top-social-icons-section">
     	    <div class="section-header">
@@ -1012,47 +1064,161 @@
     </main>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-
-        if (mobileMenuBtn && navMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
+        // Typewriter effect
+        const typewriterElement = document.getElementById('typewriter');
+        const phrases = [
+            'Data Analyst'
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(typeWriter, typeSpeed);
         }
+        
+        // Start typewriter effect after initial delay
+        setTimeout(typeWriter, 3000);
+        
+        
+        // Enhanced smooth scrolling and animations
+class SmoothScrolling {
+    constructor() {
+        this.init();
+        this.setupIntersectionObserver();
+        this.setupParallaxEffects();
+    }
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu) {
-                    navMenu.classList.remove('active');
-                }
-            });
-        });
-
+    init() {
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(anchor.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offset = 80; // Account for fixed navbar
+                    const elementPosition = target.offsetTop - offset;
+                    
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Active navigation link highlighting
-        function updateActiveNavLink() {
-            const sections = document.querySelectorAll('.section');
-            const navLinks = document.querySelectorAll('.nav-link');
+    }
+
+
+
+    setupIntersectionObserver() {
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    
+                    // Special handling for project cards
+                    if (entry.target.classList.contains('project-card')) {
+                        this.animateProjectCard(entry.target);
+                    }
+                    
+                    // Special handling for skill items
+                    if (entry.target.classList.contains('skill-item')) {
+                        this.animateSkillItem(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.project-card, .skill-item, .section-header, .contact-form').forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    animateProjectCard(card) {
+        const delay = Array.from(card.parentNode.children).indexOf(card) * 200;
+        setTimeout(() => {
+            card.style.animation = `slideInUp 0.6s ease-out forwards`;
+        }, delay);
+    }
+
+    animateSkillItem(item) {
+        const delay = Array.from(item.parentNode.children).indexOf(item) * 100;
+        setTimeout(() => {
+            item.style.animation = `fadeInScale 0.5s ease-out forwards`;
+        }, delay);
+    }
+
+    setupParallaxEffects() {
+        let ticking = false;
+
+        const updateParallax = () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-element');
             
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new SmoothScrolling();
+});
+
+// Function to inject additional CSS
+function injectCSS() {
+    const style = document.createElement('style');
+    style.textContent = additionalCSS;
+    document.head.appendChild(style);
+}
+
+// Inject CSS when script loads
+injectCSS();
+
+
+    </script>
+</body>
+</html>
