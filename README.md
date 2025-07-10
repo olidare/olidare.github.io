@@ -8,7 +8,7 @@
 - **Data Analytics Projects** — Real-world analysis and insights
 
 ## 🔗 Links
-**[📱 Live Portfolio →](https://olidare.github.io/)**
-
+- **[📱 Live Portfolio →](https://olidare.github.io/)**
+- **[📑 Latest CV →](https://docs.google.com/document/d/1O2JP3f63yKs4ixJ4UAh_AG-AkqVQ0bzkDMesJH0s2AI/edit?tab=t.0)**
 ---
 
