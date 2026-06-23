@@ -1,1274 +1,1159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-   	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --accent-color: #10b981;
-            --icon-color: #4f2ab5;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
-            color: white; /* Added to ensure all text is white by default */
-        }
-        
-		.main-content {
-			padding-top: 70px; 
-			padding-left: 60px;
-		}
-		
-		.standard-section {
-		  min-height: 100vh;
-		  padding: 5rem 2rem;
-		  text-align: center;
-		}
-		
-		        .section-header {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .section-description {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.7;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
-        }
-
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            width: 100%;
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
-        }
-
-        .greeting {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.7s forwards;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .dynamic-text {
-            display: inline-block;
-            position: relative;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, #10b981, #059669);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(135deg, #10b981, #059669);
-            animation: underlineGrow 2s ease-out 2s forwards;
-        }
-
-        .typewriter {
-            border-right: 2px solid #10b981;
-            animation: blink 1s infinite;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 1.5s forwards;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 2s forwards;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 2.5s forwards;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
-        }
-
-        .hero-image {
-            text-align: center;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 1s forwards;
-        }
-
-        .profile-pic {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-pic::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, #10b981, transparent);
-            animation: rotate 3s linear infinite;
-            opacity: 0.6;
-        }
-
-        .profile-pic::after {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .profile-pic img {
-            width: 90%;
-            height: 90%;
-            border-radius: 50%;
-            object-fit: cover;
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05) rotate(5deg);
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .floating-icon {
-            position: absolute;
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-icon:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-icon:nth-child(2) {
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .floating-icon:nth-child(3) {
-            bottom: 30%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes underlineGrow {
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink {
-            0%, 50% {
-                border-color: #10b981;
-            }
-            51%, 100% {
-                border-color: transparent;
-            }
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .profile-pic {
-                width: 250px;
-                height: 250px;
-            }
-        }
-        
-        .cta-footer {
-  			position: bottom
-  			background: var(--primary-color);
-  			color: white;
-  			text-align: center;
- 			padding: 0.8rem;
- 			font-weight: 500;
-  			margin-top: 3rem;
-        }
-        
-        .cta-footer a {
-          color: #fff;
-          text-decoration: underline;
-        }
-                /* NEW: Footer Styles */
-		.footer {
-		  			position: bottom
-			background-color: var(--text-primary); /* A dark background similar to the example */
-			color: white; /* Light text color */
-			padding: 2.5rem 2rem; /* Vertical and horizontal padding */
-			text-align: center; /* Center the text */
-			margin-top: 5rem; /* Add some space above the footer */
-		}
-		
-		.footer .container {
-			max-width: 1200px;
-			margin: 0 auto;
-			width: 100%;
-		}
-		
-		.footer p {
-			font-size: 0.9rem; /* Smaller font size for copyright text */
-			line-height: 1.5;
-			margin: 0; /* Remove default paragraph margin */
-		}
-		
-		.footer p a {
-			color: white; /* Ensure links are white */
-			text-decoration: underline;
-			transition: color 0.3s ease;
-		}
-		
-		.footer p a:hover {
-			color: var(--primary-color); /* Highlight links on hover */
-		}
-		
-		/* Hide line break on larger screens, only show on mobile */
-		.mobile-break {
-			display: none;
-		}
-
-		@media (max-width: 768px) {
-			.footer {
-				padding: 2rem 1rem; /* Adjust padding for smaller screens */
-			}
-			.mobile-break {
-				display: block; /* Show line break on mobile */
-			}
-		}
-		/* NEW: Styles for the top social icons section  */
-		.top-social-icons-section {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			padding: 0.8rem 0; /* Made smaller */
-			text-align: center;
-			margin-top: 70px;
-			position: relative;
-			z-index: 99;
-			box-shadow: var(--shadow-md);
-		}
-		
-		.social-icons-container {
-			display: flex;
-			justify-content: center; /* Center the icons horizontally */
-			gap: 1.5rem; /* Space between icons */
-			/* Ensure the container itself doesn't exceed a max-width if desired */
-			max-width: 1200px; /* Or a smaller width if you want them grouped tighter */
-			margin: 0 auto; /* Center the container */
-			padding: 0 2rem; /* Horizontal padding for responsiveness */
-		}
-		
-		.top-social-icon-link {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 48px; /* Square icon size */
-			height: 48px;
-			border-radius: 8px; /* Slightly rounded corners */
-			background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent white background */
-			color: white; /* Icon color */
-			font-size: 1.5rem; /* Icon size */
-			text-decoration: none;
-			transition: all 0.3s ease;
-		}
-		
-		.top-social-icon-link:hover {
-			background-color: rgba(255, 255, 255, 0.3); /* More opaque white on hover */
-			transform: translateY(-2px); /* Slight lift effect */
-			box-shadow: var(--shadow-sm); /* Subtle shadow on hover */
-		}
-		/* NEW: Updated styles for the fixed social panel to match footer */
-		.fixed-social-panel {
-			position: fixed;
-			left: 0;
-			top: 50%; /* Start vertical positioning from the middle */
-			transform: translateY(-50%); /* Adjust to truly center it vertically */
-			width: 60px; /* Adjust as needed for your icon size */
-            background-color: var(--text-primary); /* Match footer background */
-			border-top-right-radius: 8px;
-			border-bottom-right-radius: 8px;
-			z-index: 999; /* Below navbar, above main content */
-			display: flex;
-			flex-direction: column; /* Stack items vertically */
-			align-items: center; /* Center icons horizontally within the panel */
-			padding: 1rem 0; /* Vertical padding */
-			gap: 1.5rem; /* Space between icons */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
-		
-		/* Adjustments for the individual contact links within the fixed panel */
-		.fixed-social-panel .contact-link {
-			display: flex;
-			flex-direction: column; /* Stack icon and text vertically within each link */
-			align-items: center; /* Center content within each link */
-			gap: 0.25rem; /* Space between icon and text */
-			text-decoration: none;
-			color: white; /* Changed to white to match footer */
-			transition: all 0.2s ease;
-			padding: 0.5rem; /* Padding around each icon/text block */
-			border-radius: 4px;
-		}
-		
-		.fixed-social-panel .contact-link:hover {
-			color: white;
-			background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
-			transform: scale(1.05); /* Slight zoom effect */
-		}
-		
-		/* Styles for the Font Awesome icons themselves */
-		.contact-icon-fa {
-			font-size: 1.8rem; /* Size of the icons */
-			color: white; /* Changed to white to match footer */
-			transition: color 0.2s ease;
-		}
-		
-		.fixed-social-panel .contact-link:hover .contact-icon-fa {
-			color: var(--accent-color); /* Accent color on hover */
-		}
-		
-		/* Hide the text label for the icons in the fixed panel by default */
-		.fixed-social-panel .contact-text {
-			font-size: 0.7rem; /* Smaller text for labels */
-            color: white; /* Ensure text is white */
-			opacity: 0; /* Hidden by default */
-			max-height: 0;
-			overflow: hidden;
-			transition: opacity 0.2s ease, max-height 0.2s ease;
-		}
-		
-		/* Show the text label on hover (optional, for a tooltip-like effect) */
-		.fixed-social-panel .contact-link:hover .contact-text {
-			opacity: 1;
-			max-height: 20px; /* Allow text to show */
-		}    
-		
-		/* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: linear-gradient(115deg, #667eea 0%, #764ba2 100%);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white; /* Changed to white */
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: white; /* Changed to white */
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--accent-color); /* Changed to accent color */
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background-color: var(--accent-color); /* Changed to accent color */
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .mobile-menu-btn span {
-            width: 25px;
-            height: 3px;
-            background: white; /* Changed to white */
-            transition: 0.3s;
-            border-radius: 3px;
-        }
-                /* Project Cards */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-thumbnail {
-            width: 100%;
-            height: 200px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .project-card p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-		.tech-badge {
-			background: rgba(16, 185, 129, 0.2);
-			color: white;
-			padding: 0.3rem 0.8rem;
-			border-radius: 50px;
-			font-size: 0.8rem;
-			font-weight: 600;
-			border: 1px solid transparent;
-			background-clip: padding-box;
-			position: relative;
-		}
-		
-		.tech-badge::before {
-			content: '';
-			position: absolute;
-			top: -1px;
-			right: -1px;
-			bottom: -1px;
-			left: -1px;
-			z-index: -1;
-			border-radius: 50px;
-			background: linear-gradient(135deg, #10b981, #059669);
-		}
-        .project-link {
-            display: inline-block;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--accent-color);
-        }
-
-      /* About Section */
-		.about-content {
-			max-width: 800px;
-			margin: 0 auto;
-			text-align: left;
-		}
-		
-		/* Target only direct paragraphs in about-content */
-		.about-content > p {
-			color: white; /* Make these paragraphs white */
-			margin-bottom: 1.5rem;
-			line-height: 1.7;
-		}
-		
-		/* Skills Grid - keep existing styles */
-		.skills-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			gap: 1.5rem;
-			margin-top: 3rem;
-		}
-		
-		.skill-item {
-			background: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
-			padding: 1.5rem;
-			border-radius: 8px;
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			transition: all 0.3s ease;
-		}
-		
-		.skill-item:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-		}
-		
-		.skill-item h4 {
-			color: var(--accent-color); /* Keep accent color for headings */
-			margin-bottom: 0.5rem;
-			font-size: 1.2rem;
-		}
-		
-		.skill-item p {
-			color: rgba(255, 255, 255, 0.7); /* Keep lighter color for skill text */
-			font-size: 0.9rem;
-		}
-		        /* Contact Section */
-#contact .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dare Consulting | Enterprise Splunk & Security Engineering</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --surface: #111827;
+  --surface2: #1a2235;
+  --accent: #00d4aa;
+  --accent2: #7c3aed;
+  --text: #e2e8f0;
+  --text-dim: #64748b;
+  --text-mid: #94a3b8;
+  --border: rgba(255,255,255,0.07);
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Space Grotesk', sans-serif;
 }
 
-#contact .contact-form {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-#contact .form-group {
-    margin-bottom: 1.5rem;
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10,14,26,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
-#contact .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: white;
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-decoration: none;
 }
 
-#contact .form-group input,
-#contact .form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+.nav-logo span { color: var(--text-dim); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
 }
 
-#contact .form-group input:focus,
-#contact .form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-mid);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
 }
 
-#contact .form-group textarea {
-    height: 120px;
-    resize: vertical;
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--accent);
+  color: var(--bg) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600 !important;
+  transition: opacity 0.2s !important;
 }
 
-#contact .submit-btn {
-    width: 100%;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.nav-cta:hover { opacity: 0.85; color: var(--bg) !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
 }
 
-#contact .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-#contact .contact-info h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: white;
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-#contact .contact-links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-#contact .contact-section-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-#contact .contact-section-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 40px; height: 1px;
+  background: var(--accent);
 }
 
-#contact .contact-section-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: rgba(16, 185, 129, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-color);
-    font-size: 1rem;
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
 }
 
-/* Responsive adjustments for contact section */
+h1 .accent { color: var(--accent); }
+h1 .dim { color: var(--text-dim); }
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: var(--text-mid);
+  max-width: 580px;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text-mid);
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* STATS BAR */
+.stats-bar {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem;
+}
+
+.stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--mono);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+}
+
+/* SECTION SHARED */
+section {
+  padding: 6rem 2rem;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  color: var(--text-mid);
+  font-size: 1.05rem;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* SERVICES */
+#services { background: var(--bg); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.service-card:hover {
+  border-color: rgba(0,212,170,0.3);
+  transform: translateY(-3px);
+}
+
+.service-card:hover::before { opacity: 1; }
+
+.service-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  background: rgba(0,212,170,0.08);
+  color: var(--accent);
+  border: 1px solid rgba(0,212,170,0.15);
+}
+
+/* ENGAGEMENTS */
+#engagements { background: var(--surface); }
+
+.engagements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.engagement-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  transition: border-color 0.2s;
+}
+
+.engagement-card:hover { border-color: rgba(0,212,170,0.25); }
+
+.engagement-sector {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.engagement-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.engagement-card p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.engagement-outcomes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.engagement-outcomes li {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.engagement-outcomes li::before {
+  content: '→';
+  color: var(--accent);
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  margin-top: 0.05rem;
+}
+
+.engagement-meta {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.engagement-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  background: rgba(0,212,170,0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0,212,170,0.2);
+  white-space: nowrap;
+}
+
+/* CERTIFICATIONS */
+#certifications { background: var(--bg); }
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+
+.cert-card:hover { border-color: rgba(0,212,170,0.3); }
+
+.cert-icon {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  background: rgba(0,212,170,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.cert-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.cert-issuer {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-top: 0.2rem;
+}
+
+/* ABOUT */
+#about { background: var(--surface); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.about-text p:last-child { margin-bottom: 0; }
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tech-group {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.tech-group-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-item {
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  background: rgba(255,255,255,0.04);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+/* CONTACT */
+#contact { background: var(--bg); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info p {
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-item:hover { color: var(--accent); }
+
+.contact-item-icon {
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.contact-form-area {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--accent);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-group select option { background: var(--surface); }
+
+.form-submit {
+  width: 100%;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.form-submit:hover { opacity: 0.85; }
+
+/* FOOTER */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    #contact .contact-content {
-        grid-template-columns: 1fr;
-    }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .engagement-card { grid-template-columns: 1fr; }
+  .engagement-meta { text-align: left; }
+  .nav-links { display: none; }
+  .footer-inner { flex-direction: column; text-align: center; }
 }
 
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
 
-
-    </style>
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 <body>
-    <div class="floating-elements">
-        <div class="floating-icon">📊</div>
-        <div class="floating-icon">🐍</div>
-        <div class="floating-icon">📈</div>
+
+<nav>
+  <a href="#home" class="nav-logo">dare<span>/</span>consulting</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#engagements">Work</a></li>
+    <li><a href="#certifications">Credentials</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Splunk Elite Partner Experience</div>
+    <h1>
+      Enterprise Security<br>
+      <span class="accent">& Observability</span><br>
+      <span class="dim">Engineering</span>
+    </h1>
+    <p class="hero-sub">
+      Senior Splunk consulting across SIEM, ITSI, Cloud migrations, and detection engineering — delivered remotely for enterprise clients across North America and Europe.
+    </p>
+    <div class="hero-ctas">
+      <a href="#engagements" class="btn-primary">View Engagements →</a>
+      <a href="#contact" class="btn-secondary">Start a Conversation</a>
     </div>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">       </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-    <div class="fixed-social-panel">
-        <a href="mailto:odare3@gmail.com" class="contact-link" title="Email">
-            <i class="fas fa-envelope contact-icon-fa"></i>
-            <span class="contact-text">Email</span>
-        </a>
-        <a href="https://www.linkedin.com/in/oli-dare-7741361b9/" class="contact-link" target="_blank" title="LinkedIn Profile">
-            <i class="fab fa-linkedin-in contact-icon-fa"></i>
-            <span class="contact-text">LinkedIn</span>
-        </a>
-        <a href="https://github.com/olidare" class="contact-link" target="_blank" title="GitHub Profile">
-            <i class="fab fa-github contact-icon-fa"></i>
-            <span class="contact-text">GitHub</span>
-        </a>
-        <a href="https://public.tableau.com/app/profile/oliver.dare/vizzes" class="contact-link" target="_blank" title="Tableau Public Profile">
-            <i class="fas fa-chart-bar contact-icon-fa"></i> <span class="contact-text">Tableau</span>
-        </a>
-	<a href="https://docs.google.com/document/d/1O2JP3f63yKs4ixJ4UAh_AG-AkqVQ0bzkDMesJH0s2AI/edit?usp=sharing" class="contact-link" target="_blank" title="Download Resume">
-		<i class="fas fa-file-alt contact-icon-fa"></i> <span class="contact-text">Resume</span>
-    	</a>
-    </div> 
-    <main class="main-content">
+  </div>
+</section>
 
-    <section id="home" class="standard-section">
-    <div class="hero-container">
-        <div class="hero-text">
-            <div class="greeting">Hi there, I'm Oli Dare.</div>
-            <h1 class="hero-title">
-                 <span class="highlight dynamic-text" id="typewriter"></span>
-            </h1>
-            <p class="subtitle">Welcome to my Data Portfolio</p>
-            <p class="hero-description">
-                Passionate about deriving strategic insights from complex data through compelling storytelling and impactful visualizations.
-            </p>
-            <a href="#projects" class="cta-button">
-                View My Work
-                <span>→</span>
-            </a>
-        </div>
-        <div class="hero-image">
-            <div class="profile-pic">
-                <img src="Assets/IMG_1518.JPG" alt="Oli Dare">
-            </div>
-        </div>
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="reveal">
+      <span class="stat-number">5+</span>
+      <span class="stat-label">Years Splunk Experience</span>
     </div>
-    </section>
-    
-    <section id="projects" class="standard-section">
-        <div class="section-header">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-description">A showcase of my work in data analytics and visualization</p>
-        </div>
-        
-        <div class="projects-container">
-            <div class="projects-grid">
-                <!-- Your project cards here -->
-		<a href="https://github.com/olidare/Data-Analytics---Expedia" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="project-card">
-                        <div class="project-thumbnail">
-                            <img src="Assets/expedia.png">
-                        </div>
-                        <h3>Expedia Consumer Travel Insights (Extern Project)</h3>
-                        <p>Partnered with Extern to deliver a real-world marketing insights project for Expedia, a global leader in travel tech.</p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Data Analysis</span>
-                            <span class="tech-badge">Machine Learning</span>
-
-                        </div>
-                        <div class="project-links">
-                            <span class="project-link">View Project →</span>
-                        </div>
-                    </div>
-                </a>  
-                <a href="https://github.com/olidare/Data-Analytics---Waze" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="project-card">
-                        <div class="project-thumbnail">
-                            <img src="Assets/waze.png">
-                        </div>
-                        <h3>Waze Navigation Analytics</h3>
-                        <p>Advanced Google Data Analytics project analyzing real-world navigation data to identify usage patterns and optimization opportunities for the Waze app.</p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Data Analysis</span>
-                            <span class="tech-badge">Visualization</span>
-                        </div>
-                        <div class="project-links">
-                            <span class="project-link">View Project →</span>
-                        </div>
-                    </div>
-                </a>
-            
-            <a href="https://github.com/olidare/Data-Analytics---Spotify-Artist-Growth" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="Assets/spotify.png">
-                    </div>
-                    <h3>Music Streaming Analytics</h3>
-                    <p>Collaboration with a Colombian artist to analyze streaming data, identify growth patterns, and provide actionable insights for audience engagement and market expansion.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Data Analysis</span>
-                        <span class="tech-badge">Visualization</span>
-                    </div>
-                    <div class="project-links">
-                        <span class="project-link">View Project →</span>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="https://github.com/olidare/Data-Analytics---Smaller-Projects" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="Assets/Small-Project-Management.png">
-                    </div>
-                    <h3>Miscellaneous Smaller Projects</h3>
-                    <p>A curated collection of smaller projects, useful code snippets and learning resources for data analysis.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">SQL</span>
-                        <span class="tech-badge">Tableau</span>
-                        <span class="tech-badge">Splunk</span>
-                    </div>
-                    <div class="project-links">
-                        <span class="project-link">View Project →</span>
-                    </div>
-                </div>
-            </a>
-            <a href="https://github.com/olidare/olidare-LLM---Spanish-Generator" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <img src="Assets/Streamlit-App.png">
-                    </div>
-                    <h3>AI-Powered Spanish Vocabulary Collector</h3>
-                    <p>Web Application to intelligently extract useful vocabulary from Spanish articles using AI and pushes to Notion.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                    </div>
-                    <div class="project-links">
-                        <span class="project-link">View Project →</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <section id="about" class="standard-section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <p>I'm a Technical Consultant with over 4 years of expertise in Big Data Analytics and Intelligence. My passion lies in transforming complex datasets into compelling visualizations and actionable insights that drive strategic business decisions.</p>
-            
-            <p>Throughout my career, I've been highly proficient with all areas of the Data process from Data Onboarding, ETL processes, and Data Optimization. I've had the privilege of working with prestigious organizations across numerous industries, delivering solutions that significantly impact their operational efficiency and strategic planning.</p>
-            
-            <p>Currently, I'm pivoting toward a broader Data Analyst role by expanding my proficiency in SQL, Python, Statistics, and Tableau. This evolution allows me to offer a more comprehensive approach to data analysis and visualization across different platforms and methodologies.</p>
-            
-            <p>I'm passionate about understanding data at its core and helping organizations leverage their data assets for strategic value and digital transformation, I thrive on turning data challenges into opportunities for growth and improvement.</p>
-            
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h4>Analytics Platforms</h4>
-                    <p>Splunk, Tableau, Excel</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Programming</h4>
-                    <p>Python, SQL, SPL</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Data Engineering</h4>
-                    <p>ETL, Data Onboarding, Optimization</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Visualization</h4>
-                    <p>Dashboards, Custom Charts, Reporting</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Cloud Platforms</h4>
-                    <p>AWS, Splunk Cloud</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Security Analytics</h4>
-                    <p>Threat Modeling, Risk Assessment</p>
-                </div>
-            </div>
-        </div>
-    </section>
-		<!-- Contact Section -->
-	<section id="contact" class="section">
-		<div class="container">
-			<div class="section-header">
-				<h2>Get In Touch</h2>
-				<p>Let's discuss how data analytics can drive your business forward</p>
-			</div>
-			<div class="contact-content">
-				<div class="contact-form">
-					<form id="contactForm">
-						<div class="form-group">
-							<label for="name">Name</label>
-							<input type="text" id="name" name="name" required>
-						</div>
-						<div class="form-group">
-							<label for="email">Email</label>
-							<input type="email" id="email" name="email" required>
-						</div>
-						<div class="form-group">
-							<label for="subject">Subject</label>
-							<input type="text" id="subject" name="subject" required>
-						</div>
-						<div class="form-group">
-							<label for="message">Message</label>
-							<textarea id="message" name="message" required></textarea>
-						</div>
-						<button type="submit" class="submit-btn">Send Message</button>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-	</section> 
-    <div class="cta-footer">
-    	<section class="top-social-icons-section">
-    	    <div class="section-header">
-            	<h2><font color="white">Professional Network</font></h2>
-            </div>
-        	<div class="container social-icons-container">
-            <a href="https://www.linkedin.com/in/oli-dare-7741361b9/" target="_blank" class="top-social-icon-link" title="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/olidare" target="_blank" class="top-social-icon-link" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://public.tableau.com/app/profile/oliver.dare/vizzes" target="_blank" class="top-social-icon-link" title="Tableau Public">
-                <i class="fas fa-chart-bar"></i> </a>
-            <a href="mailto:odare3@gmail.com" class="top-social-icon-link" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            </div>
-    	</section>
+    <div class="reveal">
+      <span class="stat-number">30+</span>
+      <span class="stat-label">Enterprise Clients Supported</span>
     </div>
-    </main>
+    <div class="reveal">
+      <span class="stat-number">5</span>
+      <span class="stat-label">Splunk Certifications</span>
+    </div>
+    <div class="reveal">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Remote Delivery</span>
+    </div>
+  </div>
+</div>
 
-    <script>
-        // Typewriter effect
-        const typewriterElement = document.getElementById('typewriter');
-        const phrases = [
-            'Data Analyst'
-        ];
-        
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function typeWriter() {
-            const currentPhrase = phrases[phraseIndex];
-            
-            if (isDeleting) {
-                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500;
-            }
-            
-            setTimeout(typeWriter, typeSpeed);
-        }
-        
-        // Start typewriter effect after initial delay
-        setTimeout(typeWriter, 3000);
-        
-        
-        // Enhanced smooth scrolling and animations
-class SmoothScrolling {
-    constructor() {
-        this.init();
-        this.setupIntersectionObserver();
-        this.setupParallaxEffects();
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label">What I Do</p>
+    <h2 class="section-title">Consulting Services</h2>
+    <p class="section-desc">Hands-on Splunk engineering across the full platform stack, delivered as a trusted technical advisor.</p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🔐</div>
+        <h3>Splunk Enterprise Security</h3>
+        <p>ES deployment, detection framework design, Risk Based Alerting, MITRE ATT&CK alignment, correlation search development, and SOC enablement for MDR environments.</p>
+        <div class="service-tags">
+          <span class="tag">ES</span>
+          <span class="tag">RBA</span>
+          <span class="tag">MITRE ATT&CK</span>
+          <span class="tag">Detection Engineering</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">📊</div>
+        <h3>Splunk ITSI</h3>
+        <p>End-to-end ITSI implementations including service trees, KPI frameworks, adaptive thresholding, glass tables, episode review configuration, and AIOps integration.</p>
+        <div class="service-tags">
+          <span class="tag">ITSI</span>
+          <span class="tag">Glass Tables</span>
+          <span class="tag">KPIs</span>
+          <span class="tag">AIOps</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">☁️</div>
+        <h3>Splunk Cloud Migration</h3>
+        <p>On-premises to Splunk Cloud migrations including legacy search optimisation, CIM compliance, data feed standardisation, custom app redesign, and post-migration validation.</p>
+        <div class="service-tags">
+          <span class="tag">Splunk Cloud</span>
+          <span class="tag">CIM</span>
+          <span class="tag">Migration</span>
+          <span class="tag">AWS</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🔄</div>
+        <h3>Data Onboarding & Architecture</h3>
+        <p>Designing and implementing scalable data ingestion pipelines, parsing, CIM normalisation, forwarder deployment, and ingestion cost optimisation across hybrid environments.</p>
+        <div class="service-tags">
+          <span class="tag">HEC</span>
+          <span class="tag">Forwarders</span>
+          <span class="tag">Props/Transforms</span>
+          <span class="tag">Cribl</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🎯</div>
+        <h3>Detection Engineering</h3>
+        <p>Building and tuning detection logic aligned to MITRE ATT&CK, developing threat hunting playbooks, reducing alert fatigue, and improving signal quality for SOC teams.</p>
+        <div class="service-tags">
+          <span class="tag">Threat Hunting</span>
+          <span class="tag">Sigma</span>
+          <span class="tag">Playbooks</span>
+          <span class="tag">IR Runbooks</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🧠</div>
+        <h3>Threat Intelligence Integration</h3>
+        <p>TAXII 2.1 server architecture, STIX 2.1 integration, automated IOC distribution, custom Splunk TA development, and threat feed operationalisation.</p>
+        <div class="service-tags">
+          <span class="tag">TAXII 2.1</span>
+          <span class="tag">STIX</span>
+          <span class="tag">Python</span>
+          <span class="tag">Custom TAs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section id="engagements">
+  <div class="section-inner">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">Client Engagements</h2>
+    <p class="section-desc">A selection of enterprise engagements delivered across regulated industries. Client names withheld by agreement.</p>
+
+    <div class="engagements-list">
+
+      <div class="engagement-card reveal">
+        <div>
+          <div class="engagement-sector">Healthcare / Public Sector · UK</div>
+          <h3>Nationwide Health Service — Splunk ITSI Implementation</h3>
+          <p>Implemented a comprehensive Splunk ITSI monitoring solution for a national health service organisation managing critical distribution infrastructure under high-pressure, time-critical conditions. Presented the solution at Splunk .conf22.</p>
+          <ul class="engagement-outcomes">
+            <li>Built glass tables, service trees, KPI frameworks and correlation searches from scratch</li>
+            <li>Delivered advanced monitoring across the entire distribution pipeline eliminating operational bottlenecks</li>
+            <li>Created executive dashboards presenting complex metrics to senior government stakeholders</li>
+            <li>Presented custom ITSI alerting solution at Splunk .conf22</li>
+          </ul>
+        </div>
+        <div class="engagement-meta">
+          <span class="engagement-badge">Splunk ITSI</span>
+        </div>
+      </div>
+
+      <div class="engagement-card reveal">
+        <div>
+          <div class="engagement-sector">Financial Services / Fintech · Europe</div>
+          <h3>Major Fintech Company — Splunk ES Security Posture Uplift</h3>
+          <p>Led a comprehensive Splunk ES engagement for a large Fintech organisation operating across PCI-regulated environments. Conducted a full security posture assessment before designing and deploying an enterprise detection framework.</p>
+          <ul class="engagement-outcomes">
+            <li>Increased security detection coverage from 20% to 100% across PCI-regulated systems</li>
+            <li>Mapped security architecture to NIST and MITRE ATT&CK frameworks</li>
+            <li>Reduced Splunk ingestion volume by ~35% through targeted data filtering and optimisation</li>
+            <li>Presented data-driven recommendations to C-suite securing programme approval</li>
+          </ul>
+        </div>
+        <div class="engagement-meta">
+          <span class="engagement-badge">Splunk ES · PCI DSS</span>
+        </div>
+      </div>
+
+      <div class="engagement-card reveal">
+        <div>
+          <div class="engagement-sector">Banking · UK</div>
+          <h3>Major UK Bank — Splunk Cloud Migration</h3>
+          <p>Migrated a complex on-premises Splunk environment to Splunk Cloud for one of the UK's largest retail banks, including full redesign of legacy searches, data feeds, and custom applications for cloud architecture.</p>
+          <ul class="engagement-outcomes">
+            <li>Redesigned and optimised legacy searches and custom apps for cloud architecture</li>
+            <li>Ensured CIM compliance and improved search performance while reducing compute costs</li>
+            <li>Standardised multiple data feeds to align with Common Information Model standards</li>
+            <li>Maintained operational continuity and data integrity throughout migration</li>
+          </ul>
+        </div>
+        <div class="engagement-meta">
+          <span class="engagement-badge">Splunk Cloud</span>
+        </div>
+      </div>
+
+      <div class="engagement-card reveal">
+        <div>
+          <div class="engagement-sector">MDR / Security Operations · North America</div>
+          <h3>30+ Enterprise MDR Clients — Ongoing Splunk Engineering</h3>
+          <p>Currently providing senior Splunk engineering and detection engineering support across a portfolio of 30+ enterprise clients in an MDR environment for a US-based Splunk Elite Partner.</p>
+          <ul class="engagement-outcomes">
+            <li>Architected ES configurations and detection frameworks for new MDR client onboardings</li>
+            <li>Built and deployed a production TAXII 2.1 threat intelligence server with Python/PostgreSQL and custom Splunk TA</li>
+            <li>Developed and maintained incident response playbooks and detection runbooks</li>
+            <li>Acting as senior escalation point for architecture and detection engineering challenges across the estate</li>
+          </ul>
+        </div>
+        <div class="engagement-meta">
+          <span class="engagement-badge">ES · MDR · Threat Intel</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-desc">Active certifications across the Splunk platform and cloud infrastructure.</p>
+
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon">🏆</div>
+        <div>
+          <div class="cert-name">Splunk Core Certified Consultant</div>
+          <div class="cert-issuer">SPLK-3003 · Splunk</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🏗️</div>
+        <div>
+          <div class="cert-name">Splunk Enterprise Certified Architect</div>
+          <div class="cert-issuer">Splunk</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">☁️</div>
+        <div>
+          <div class="cert-name">Splunk Cloud Certified Admin</div>
+          <div class="cert-issuer">Splunk</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <div class="cert-name">Splunk ES Implementation</div>
+          <div class="cert-issuer">Splunk</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">☁️</div>
+        <div>
+          <div class="cert-name">AWS Solutions Architect</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">📊</div>
+        <div>
+          <div class="cert-name">Google Advanced Data Analytics</div>
+          <div class="cert-issuer">Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Oliver Dare</h2>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Senior Splunk Consultant with 8 years in technology and 5+ years specialising in SIEM engineering, detection engineering, and security operations. Currently providing specialist Splunk engineering to a US-based Splunk Elite Partner supporting MDR operations across 30+ enterprise clients in North America.</p>
+        <p>Prior to this I delivered Splunk implementations across the NHS, major UK financial institutions, and regulated Fintech environments — covering everything from ITSI and Enterprise Security to Splunk Cloud migrations and bespoke threat intelligence integrations.</p>
+        <p>I present and operate at every level — from hands-on SPL development and forwarder configuration to presenting findings to C-suite executives and government stakeholders. I presented a custom ITSI alerting solution at Splunk .conf22.</p>
+        <p>Based in Bogotá, Colombia. Available for remote engagements globally, with flexibility for onsite where required.</p>
+      </div>
+
+      <div class="tech-stack-grid reveal">
+        <div class="tech-group">
+          <div class="tech-group-label">SIEM & Security</div>
+          <div class="tech-items">
+            <span class="tech-item">Splunk ES</span>
+            <span class="tech-item">Splunk ITSI</span>
+            <span class="tech-item">Splunk Cloud</span>
+            <span class="tech-item">Sentinel</span>
+            <span class="tech-item">RBA</span>
+            <span class="tech-item">MITRE ATT&CK</span>
+            <span class="tech-item">TAXII 2.1</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-label">Cloud & Infra</div>
+          <div class="tech-items">
+            <span class="tech-item">AWS</span>
+            <span class="tech-item">Azure</span>
+            <span class="tech-item">Terraform</span>
+            <span class="tech-item">Ansible</span>
+            <span class="tech-item">Docker</span>
+            <span class="tech-item">Kubernetes</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-label">Development</div>
+          <div class="tech-items">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">SPL</span>
+            <span class="tech-item">SQL</span>
+            <span class="tech-item">Bash</span>
+            <span class="tech-item">REST APIs</span>
+            <span class="tech-item">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-label">Frameworks</div>
+          <div class="tech-items">
+            <span class="tech-item">NIST CSF</span>
+            <span class="tech-item">PCI DSS</span>
+            <span class="tech-item">CIM</span>
+            <span class="tech-item">STIX</span>
+            <span class="tech-item">ISO 27001</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Work Together</p>
+    <h2 class="section-title">Get in Touch</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p>Available for remote Splunk consulting engagements globally — SIEM deployments, ITSI implementations, Cloud migrations, detection engineering, and MDR support. Open to contract, C2C, and B2B arrangements.</p>
+        <div class="contact-details">
+          <a href="mailto:odare3@gmail.com" class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            odare3@gmail.com
+          </a>
+          <a href="tel:+447530884609" class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            +44 7530 884609
+          </a>
+          <a href="https://www.linkedin.com/in/oli-dare-7741361b9/" target="_blank" class="contact-item">
+            <div class="contact-item-icon">💼</div>
+            LinkedIn Profile
+          </a>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            Bogotá, Colombia · US/EU Timezone
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-area reveal">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="jane@company.com">
+          </div>
+          <div class="form-group">
+            <label>Engagement Type</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Splunk ES / SIEM</option>
+              <option>Splunk ITSI</option>
+              <option>Splunk Cloud Migration</option>
+              <option>Detection Engineering</option>
+              <option>Data Onboarding</option>
+              <option>MDR / Security Operations</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me about your Splunk environment and what you're looking to achieve..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">dare/consulting</div>
+    <div class="footer-copy">© 2026 Dare Consulting SAS · Bogotá, Colombia</div>
+    <div class="footer-links">
+      <a href="mailto:odare3@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/oli-dare-7741361b9/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, i * 80);
     }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    init() {
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    const offset = 80; // Account for fixed navbar
-                    const elementPosition = target.offsetTop - offset;
-                    
-                    window.scrollTo({
-                        top: elementPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+reveals.forEach(el => observer.observe(el));
 
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 100) {
+      current = section.getAttribute('id');
     }
-
-
-
-    setupIntersectionObserver() {
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    
-                    // Special handling for project cards
-                    if (entry.target.classList.contains('project-card')) {
-                        this.animateProjectCard(entry.target);
-                    }
-                    
-                    // Special handling for skill items
-                    if (entry.target.classList.contains('skill-item')) {
-                        this.animateSkillItem(entry.target);
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements
-        document.querySelectorAll('.project-card, .skill-item, .section-header, .contact-form').forEach(el => {
-            observer.observe(el);
-        });
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
     }
-
-    animateProjectCard(card) {
-        const delay = Array.from(card.parentNode.children).indexOf(card) * 200;
-        setTimeout(() => {
-            card.style.animation = `slideInUp 0.6s ease-out forwards`;
-        }, delay);
-    }
-
-    animateSkillItem(item) {
-        const delay = Array.from(item.parentNode.children).indexOf(item) * 100;
-        setTimeout(() => {
-            item.style.animation = `fadeInScale 0.5s ease-out forwards`;
-        }, delay);
-    }
-
-    setupParallaxEffects() {
-        let ticking = false;
-
-        const updateParallax = () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax-element');
-            
-            parallaxElements.forEach(element => {
-                const speed = element.dataset.speed || 0.5;
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px)`;
-            });
-
-            ticking = false;
-        };
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        });
-    }
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new SmoothScrolling();
+  });
 });
+</script>
 
-// Function to inject additional CSS
-function injectCSS() {
-    const style = document.createElement('style');
-    style.textContent = additionalCSS;
-    document.head.appendChild(style);
-}
-
-// Inject CSS when script loads
-injectCSS();
-
-
-    </script>
 </body>
 </html>
